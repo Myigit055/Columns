@@ -1,8 +1,8 @@
 
 public class SinglyLinkedList {
-	Node head;
+	private Node head;
 	
-	 private class Node{
+	 public class Node{
 		
 		Object data;
 		Node link;
@@ -24,6 +24,16 @@ public class SinglyLinkedList {
 		}
 		
 	}
+	 
+//	 public Node setNode(Object data) {
+//		 Node node = new Node(data);
+//		 node.setLink(node);
+////		 return 
+//	 }
+	 
+	 public Node getHead() {
+		 return head;
+	 }
 	
 	public void Add(Object data) {
 		if(head == null) {
