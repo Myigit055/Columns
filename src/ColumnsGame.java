@@ -17,7 +17,7 @@ public class ColumnsGame {
 		
 		while(true) {
 			String input = keyList().toString();
-			if(input.equalsIgnoreCase("X")) {
+			if(input.equalsIgnoreCase("B")) {
 				box.representBoxElement();
 			}
 			reset();
@@ -31,7 +31,7 @@ public class ColumnsGame {
         MultiLevelLinkedList columns = new MultiLevelLinkedList();
         SinglyLinkedList.Node temp = box.getSLL().getHead();
         for (int i = 1; i < 6; i++) {
-            columns.addColumn( String.valueOf(i));        
+            columns.addColumn(String.valueOf(i));        
             for (int j = 0; j < 6; j++) {                
                 columns.addNumber(String.valueOf(i),temp.getData());
                 temp = temp.getLink();

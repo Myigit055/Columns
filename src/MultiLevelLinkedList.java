@@ -103,11 +103,9 @@ public class MultiLevelLinkedList {
 		}
 	}
 
+	public void display() {
 
-public void display() {
-		
-		
-		if(head==null)
+		if (head == null)
 			System.out.println("linked list is empty");
 		else {
 			System.out.println("");
@@ -116,56 +114,59 @@ public void display() {
 			ColumnNode temp3 = temp2.getRight();
 			ColumnNode temp4 = temp3.getRight();
 			ColumnNode temp5 = temp4.getRight();
-			
-			System.out.print("    " +temp.getColumnName() + "    " + temp2.getColumnName() + "    " + temp3.getColumnName() + "    " + temp4.getColumnName() + "    " + temp5.getColumnName() + "\n");
-			System.out.print("    -    -    -    -    - \n");
+
+			System.out.print("   " + "C" + temp.getColumnName() + "   " + "C" + temp2.getColumnName() + "   " + "C"
+					+ temp3.getColumnName() + "   " + "C" + temp4.getColumnName() + "   " + "C" + temp5.getColumnName()
+					+ "\n");
+			System.out.print("   --   --   --   --   -- \n");
 			while (temp != null && temp2 != null && temp3 != null && temp4 != null && temp5 != null) {
 				NumNode tempn = temp.getDown();
 				NumNode tempn2 = temp2.getDown();
 				NumNode tempn3 = temp3.getDown();
 				NumNode tempn4 = temp4.getDown();
 				NumNode tempn5 = temp5.getDown();
-				
-				while(tempn!=null && tempn2!=null && tempn3!=null && tempn4!=null && tempn5!=null) {	
-					
-					
-					System.out.print("    " +tempn.getNumber());
+
+				while (tempn != null && tempn2 != null && tempn3 != null && tempn4 != null && tempn5 != null) {
+
+					System.out.print("    " + tempn.getNumber());
 					for (int j = 0; j < 3 - tempn.getNumber().toString().length(); j++) {
 						System.out.print(" ");
 					}
-					System.out.print("  " +tempn2.getNumber());
+					System.out.print("  " + tempn2.getNumber());
 					for (int j = 0; j < 3 - tempn2.getNumber().toString().length(); j++) {
 						System.out.print(" ");
 					}
-					System.out.print("  " +tempn3.getNumber());
+					System.out.print("  " + tempn3.getNumber());
 					for (int j = 0; j < 3 - tempn3.getNumber().toString().length(); j++) {
 						System.out.print(" ");
 					}
-					System.out.print("  " +tempn4.getNumber());
+					System.out.print("  " + tempn4.getNumber());
 					for (int j = 0; j < 3 - tempn4.getNumber().toString().length(); j++) {
 						System.out.print(" ");
 					}
-					System.out.print("  " +tempn5.getNumber());
+					System.out.print("  " + tempn5.getNumber());
 					for (int j = 0; j < 3 - tempn5.getNumber().toString().length(); j++) {
 						System.out.print(" ");
 					}
 					System.out.println("\n");
-				//	System.out.print("   " + tempn.getNumber() + "    " + tempn2.getNumber() + "    " + tempn3.getNumber() + "    " + tempn4.getNumber() + "    " +tempn5.getNumber() + "\n");
+					// System.out.print(" " + tempn.getNumber() + " " + tempn2.getNumber() + " " +
+					// tempn3.getNumber() + " " + tempn4.getNumber() + " " +tempn5.getNumber() +
+					// "\n");
 					tempn = tempn.getNext();
 					tempn2 = tempn2.getNext();
 					tempn3 = tempn3.getNext();
 					tempn4 = tempn4.getNext();
 					tempn5 = tempn5.getNext();
 				}
-				temp=temp.getRight();
+				temp = temp.getRight();
 				temp2 = temp.getRight();
 				temp3 = temp2.getRight();
 				temp4 = temp3.getRight();
 				temp5 = temp4.getRight();
 			}
-			
+
 		}
-		
+
 	}
 
 }
