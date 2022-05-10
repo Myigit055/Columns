@@ -1,6 +1,7 @@
 
 public class MultiLevelLinkedList {
 	
+	private ColumnNode head;
 	
 	private class ColumnNode{
 
@@ -64,6 +65,61 @@ public class MultiLevelLinkedList {
 			this.next = next;
 		}
 		
+		
+	}
+	
+	public void addColumn(String columnName) {
+		if(head==null) {
+			ColumnNode colNode = new ColumnNode(columnName);
+			head = colNode;
+		}else {
+			ColumnNode temp = head;
+			while(temp.getRight() != null) 
+				temp = temp.getRight();
+			ColumnNode colNode = new ColumnNode(columnName);
+			temp.setRight(colNode);
+		}
+	}
+	
+	public void addNumber(String column , int number) {
+		if(head==null)
+			System.out.println("HEAD IS NULL");
+		else {
+			ColumnNode temp = head;
+			while(temp!= null) {
+				if(column.equals(temp.getColumnName())) {
+					NumNode temp2 = temp.getDown();
+					if(temp2 == null) {
+						NumNode newNode = new NumNode(number);
+						temp.setDown(newNode);
+					}else {
+						while(temp2.getNext() != null)
+							temp2=temp2.getNext();
+						NumNode newnode = new NumNode(number);
+						temp2.setNext(newnode);
+					}
+				}
+				temp = temp.getRight();
+			}
+		}
+	}
+	
+	public void display() {
+		if(head==null)
+			System.out.println("linked list is empty");
+		else {
+			ColumnNode temp = head;
+			while(temp!=null) {
+				System.out.print(temp.getColumnName() + " --> ");
+				NumNode temp2 = temp.getDown();
+				while(temp2!=null) {
+					System.out.print(temp2.getNumber()+ " ");
+					temp2 = temp2.getNext();
+				}
+				temp=temp.getRight();
+				System.out.println();
+			}
+		}
 		
 	}
 	
